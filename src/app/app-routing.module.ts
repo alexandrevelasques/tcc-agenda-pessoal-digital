@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: "cadastrar", component: CadastrarComponent},
   {path: "agendar", component: AgendarComponent},
   {path: "visualizar", component: VisualizarComponent},
-  {path: "", redirectTo: "menu", pathMatch: "full"}
+  {path: "", redirectTo: "menu", pathMatch: "full"},
+  {path: "**", redirectTo: "menu"}
 
 ];
 

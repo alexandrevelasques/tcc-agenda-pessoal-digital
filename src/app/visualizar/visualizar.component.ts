@@ -6,15 +6,24 @@ import { Router } from '@angular/router';
   templateUrl: './visualizar.component.html',
   styleUrls: ['./visualizar.component.css']
 })
-export class VisualizarComponent{
+export class VisualizarComponent implements OnInit{
+
+  agendamentos: any[] = [];
 
   constructor(
         private router: Router
 
       ) { }
 
-      moveMenu() {
-        this.router.navigate(["menu"])
-      }
+  ngOnInit(): void {
+    const dadosAgendamentos = localStorage.getItem('agendamentos');
+    if (dadosAgendamentos) {
+      this.agendamentos = JSON.parse(dadosAgendamentos);
+    }
+  }
+
+  moveMenu() {
+      this.router.navigate(["menu"])
+  }
 
 }
